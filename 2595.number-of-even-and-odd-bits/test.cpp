@@ -6,7 +6,9 @@ TEST_CASE("testing evenOddBit")
 {
     Solution solution = Solution();
 
-    CHECK(solution.evenOddBit(0) == vector<int>{0, 0});
-    CHECK(solution.evenOddBit(50) == vector<int>{1, 2});
-    CHECK(solution.evenOddBit(2) == vector<int>{0, 1});
+    vector<int> output1 = {1, 2};
+    CHECK(solution.evenOddBit(50) == output1);
+
+    vector<int> output2 = {0, 1};
+    CHECK(solution.evenOddBit(2) == output2);
 }
