@@ -53,6 +53,46 @@ public:
 
     // int minimumWhiteTiles(string floor, int numCarpets, int carpetLen)
     // {
+    //     // 砖块数
+    //     int n = floor.size();
+    //     // 地毯数 * 地毯长度大于等于砖块数时，说明能全部覆盖，返回 0
+    //     if (n <= numCarpets * carpetLen)
+    //     {
+    //         return 0;
+    //     }
+
+    //     // 我们遍历地毯，假设当前是第 n 个地毯
+    //     // d[j] 表示在 n 个地毯覆盖前 j 个砖块的最少白色砖块数。
+    //     // f[j] 表示在 n - 1 个地毯覆盖前 j 个砖块的最少白色砖块数。
+    //     // 每一轮遍历结束时，将 d 赋值给 f 即可。遍历完所有地毯，d[n] 即为答案。
+    //     int d[n + 1];
+    //     int f[n + 1];
+
+    //     // 地毯数为 0 时
+    //     d[0] = 0;
+    //     for (int j = 1; j <= n; j++)
+    //     {
+    //         d[j] = d[j - 1] + (floor[j - 1] == '1');
+    //     }
+    //     // d 赋值给 f
+    //     memcpy(f, d, sizeof(d));
+
+    //     // i 为地毯数
+    //     for (int i = 1; i <= numCarpets; i++)
+    //     {
+    //         // j 为砖块数，i * numCarpets > j 则说明可以全部覆盖，不考虑，所以从 i * numCarpets 开始
+    //         for (int j = i * numCarpets; j <= n; j++)
+    //         {
+    //             d[j] = min(d[j - 1] + (floor[j - 1] == '1'), f[j - carpetLen]);
+    //         }
+    //         memcpy(f, d, sizeof(d));
+    //     }
+
+    //     return d[n];
+    // }
+
+    // int minimumWhiteTiles(string floor, int numCarpets, int carpetLen)
+    // {
     //     // dp[i][j] 表示前 i 个地毯覆盖到第 j 个砖块的最少白色砖块数，答案即为 dp[numCarpets][floor.size() - 1]
     //     vector<vector<int>> dp(numCarpets + 1, vector<int>(floor.size(), 0x3f3f3f3f));
     //     int floorLen = floor.size();
