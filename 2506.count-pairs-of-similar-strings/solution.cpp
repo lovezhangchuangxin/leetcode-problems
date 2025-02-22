@@ -21,7 +21,7 @@ public:
         for (auto &word : words)
         {
             hash = 0;
-            // 字符串转 hash，只需要把 26 个字母映射到 32 位的数字即可。
+            // 字符串转 hash，只需要把 26 个字母映射到 int 类型的低 26 位即可。
             for (auto &c : word)
             {
                 hash |= (1 << (c - 'a'));
