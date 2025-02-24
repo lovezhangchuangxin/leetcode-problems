@@ -44,9 +44,9 @@ public:
             }
             sum = ans[0];
 
-            for (int i = 1; i < n; i++)
+            for (int i = 1, j = k + n; i < n; i++, j++)
             {
-                sum += code[i - 1] - code[(i + k + n - 1) % n];
+                sum += code[i - 1] - code[j % n];
                 ans[i] = sum;
             }
         }
