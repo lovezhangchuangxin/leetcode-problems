@@ -29,14 +29,14 @@ public:
         // 初始化窗口
         for (int i = 0; i < k; i++)
         {
-            hash = hash << 1 | (s[i] - '0');
+            hash = hash << 1 | (s[i] & 1);
         }
         set.insert(hash);
 
         // 滑动窗口
         for (int i = k; i < s.size(); i++)
         {
-            hash = hash << 1 | (s[i] - '0');
+            hash = hash << 1 | (s[i] & 1);
             hash &= mask;
             set.insert(hash);
         }
