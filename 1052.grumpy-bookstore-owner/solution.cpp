@@ -28,10 +28,10 @@ public:
 
         maxx = num;
         // 滑动窗口
-        for (int i = minutes; i < customers.size(); i++)
+        for (int i = minutes, j = 0; i < customers.size(); i++, j++)
         {
             total += grumpy[i] ? 0 : customers[i];
-            num += (grumpy[i] ? customers[i] : 0) - (grumpy[i - minutes] ? customers[i - minutes] : 0);
+            num += (grumpy[i] ? customers[i] : 0) - (grumpy[j] ? customers[j] : 0);
             maxx = max(maxx, num);
         }
 
