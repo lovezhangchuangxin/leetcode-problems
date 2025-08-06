@@ -1,6 +1,9 @@
 .vscode/
 
 *.exe
+test
 
 # 测试目标，用来写一些练习代码
 __tests__/
+
+test.dSYM/
